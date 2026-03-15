@@ -1,0 +1,13 @@
+<footer class="site-footer">
+    <div class="site-footer__inner">
+        <a href="{{@site.url}}" class="site-footer__logo">{{@site.title}}</a>
+        <nav class="site-footer__nav">
+            <ul>
+                {{#foreach @site.secondary_navigation}}
+                    <li><a href="{{url}}">{{label}}</a></li>
+                {{/foreach}}
+            </ul>
+        </nav>
+        <p class="site-footer__copy">© {{date format="YYYY"}} {{@site.title}}</p>
+    </div>
+</footer>

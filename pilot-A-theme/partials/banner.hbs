@@ -1,0 +1,12 @@
+<section class="banner">
+    <div class="banner__inner">
+        <h1 class="banner__title">{{@site.title}}</h1>
+        {{#if @site.description}}
+            <p class="banner__description">{{@site.description}}</p>
+        {{/if}}
+        <div class="banner__actions">
+            <a href="{{@site.url}}" class="btn btn--primary">Start Reading</a>
+            <a href="#/portal" class="btn btn--secondary">Subscribe</a>
+        </div>
+    </div>
+</section>

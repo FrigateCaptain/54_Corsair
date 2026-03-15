@@ -1,0 +1,12 @@
+{
+  "name": "fantasma-source",
+  "description": "Ghost theme generated via Fantasma builder (pilot A)",
+  "version": "1.0.0",
+  "engines": {
+    "ghost": ">=4.0.0"
+  },
+  "license": "MIT",
+  "config": {
+    "posts_per_page": 10
+  }
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{meta_title}}</title>
+    {{ghost_head}}
+    <link rel="stylesheet" href="{{asset "css/screen.css"}}">
+</head>
+<body class="home-template">
+
+{{> navigation}}
+
+<main>
+    {{> banner}}
+
+    <section class="posts-section">
+        <div class="posts-inner">
+            {{#foreach posts}}
+                <article class="post-card">
+                    {{#if feature_image}}
+                        <a href="{{url}}" class="post-card__image-link">
+                            <img src="{{feature_image}}" alt="{{title}}" class="post-card__image">
+                        </a>
+                    {{/if}}
+                    <div class="post-card__content">
+                        <h2 class="post-card__title"><a href="{{url}}">{{title}}</a></h2>
+                        <p class="post-card__excerpt">{{excerpt words="20"}}</p>
+                        <div class="post-card__meta">
+                            <span>{{primary_author.name}}</span>
+                            <span>—</span>
+                            <time>{{date format="MMM D, YYYY"}}</time>
+                        </div>
+                    </div>
+                </article>
+            {{/foreach}}
+        </div>
+    </section>
+</main>
+
+{{> footer}}
+
+{{ghost_foot}}
+</body>
+</html>
