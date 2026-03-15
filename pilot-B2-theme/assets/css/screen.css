@@ -1,0 +1,115 @@
+/* ponedelnik-hero theme — screen.css */
+/* Образец: ponedelnik.ru */
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    background: #ffffff;
+    color: #1a1a1a;
+}
+
+/* --- Hero --- */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 80px 40px;
+    background: #ffffff;
+}
+
+.hero__inner {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.hero__tagline {
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    color: #888;
+    margin-bottom: 24px;
+    text-transform: uppercase;
+}
+
+.hero__title {
+    font-size: clamp(48px, 8vw, 96px);
+    font-weight: 900;
+    line-height: 1.0;
+    letter-spacing: -0.02em;
+    color: #1a1a1a;
+    text-transform: uppercase;
+    margin-bottom: 32px;
+}
+
+.hero__subtitle {
+    font-size: clamp(16px, 2.5vw, 24px);
+    line-height: 1.4;
+    color: #444;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-bottom: 48px;
+    max-width: 600px;
+}
+
+.hero__cta {
+    display: inline-block;
+    background: #FF6969;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 18px 40px;
+    border-radius: 100px;
+    transition: background 0.2s ease;
+}
+
+.hero__cta:hover {
+    background: #e85555;
+}
+
+/* --- Posts --- */
+.posts {
+    padding: 80px 40px;
+    background: #f9f9f9;
+}
+
+.posts__inner {
+    max-width: 900px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 32px;
+}
+
+.post-card {
+    background: #fff;
+    padding: 32px;
+    border-radius: 8px;
+}
+
+.post-card__title {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.post-card__title a {
+    color: #1a1a1a;
+    text-decoration: none;
+}
+
+.post-card__title a:hover {
+    color: #FF6969;
+}
+
+.post-card__excerpt {
+    font-size: 15px;
+    color: #666;
+    line-height: 1.5;
+}

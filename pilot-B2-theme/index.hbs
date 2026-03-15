@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{meta_title}}</title>
+    {{ghost_head}}
+    <link rel="stylesheet" href="{{asset "css/screen.css"}}">
+</head>
+<body class="home-template">
+
+{{> navigation}}
+
+<main>
+    <!-- Hero-секция по образцу ponedelnik.ru -->
+    <section class="hero">
+        <div class="hero__inner">
+            <p class="hero__tagline">КЛИЕНТАМ / СОТРУДНИКАМ / ПАРТНЁРАМ</p>
+            <h1 class="hero__title">ОПЫТО-<br>КОНСТРУКТОРСКОЕ<br>БЮРО</h1>
+            <p class="hero__subtitle">ПОМОЖЕМ СТАТЬ КОМПАНИЕЙ,<br>С КОТОРОЙ ПРИЯТНО ИМЕТЬ ДЕЛО</p>
+            <a href="#contact" class="hero__cta">ОБСУДИТЬ ЗАДАЧУ</a>
+        </div>
+    </section>
+
+    <!-- Посты -->
+    <section class="posts">
+        <div class="posts__inner">
+            {{#foreach posts}}
+                <article class="post-card">
+                    <h2 class="post-card__title"><a href="{{url}}">{{title}}</a></h2>
+                    <p class="post-card__excerpt">{{excerpt}}</p>
+                </article>
+            {{/foreach}}
+        </div>
+    </section>
+</main>
+
+{{ghost_foot}}
+</body>
+</html>

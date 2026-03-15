@@ -1,0 +1,11 @@
+<nav class="nav">
+    <div class="nav__inner">
+        <a href="{{@site.url}}" class="nav__logo">{{@site.title}}</a>
+        <ul class="nav__links">
+            {{#foreach @site.navigation}}
+                <li><a href="{{url}}">{{label}}</a></li>
+            {{/foreach}}
+        </ul>
+        <a href="#contact" class="nav__cta">ОБСУДИТЬ ЗАДАЧУ</a>
+    </div>
+</nav>
