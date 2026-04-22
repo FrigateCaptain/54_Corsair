@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Как составить план исследования голосом</title>
+<title>Исследование с AI-ассистентом — кейс</title>
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -14,42 +14,10 @@
     min-height: 100vh;
   }
 
-  .hero {
-    background: linear-gradient(135deg, #1a1f2e 0%, #0f1117 100%);
-    padding: 60px 24px 48px;
-    text-align: center;
-    border-bottom: 1px solid #1e2336;
-  }
-
-  .hero-label {
-    font-size: 12px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: #5b7fa6;
-    margin-bottom: 16px;
-  }
-
-  .hero h1 {
-    font-size: clamp(24px, 5vw, 40px);
-    font-weight: 700;
-    line-height: 1.2;
-    color: #fff;
-    max-width: 640px;
-    margin: 0 auto 16px;
-  }
-
-  .hero-sub {
-    font-size: 15px;
-    color: #7a8899;
-    max-width: 480px;
-    margin: 0 auto;
-    line-height: 1.6;
-  }
-
   .timeline {
     max-width: 720px;
     margin: 0 auto;
-    padding: 48px 24px 80px;
+    padding: 56px 24px 48px;
     position: relative;
   }
 
@@ -57,8 +25,8 @@
     content: '';
     position: absolute;
     left: 44px;
-    top: 48px;
-    bottom: 80px;
+    top: 56px;
+    bottom: 48px;
     width: 2px;
     background: linear-gradient(to bottom, #2a3a5c, #1e2a40 80%, transparent);
   }
@@ -66,7 +34,7 @@
   .step {
     display: flex;
     gap: 24px;
-    margin-bottom: 32px;
+    margin-bottom: 28px;
     position: relative;
     animation: fadeIn 0.4s ease both;
   }
@@ -80,7 +48,6 @@
   .step:nth-child(7)  { animation-delay: 0.35s; }
   .step:nth-child(8)  { animation-delay: 0.40s; }
   .step:nth-child(9)  { animation-delay: 0.45s; }
-  .step:nth-child(10) { animation-delay: 0.50s; }
 
   @keyframes fadeIn {
     from { opacity: 0; transform: translateY(12px); }
@@ -125,9 +92,7 @@
     transition: border-color 0.2s;
   }
 
-  .step-body:hover {
-    border-color: #2a3a5c;
-  }
+  .step-body:hover { border-color: #2a3a5c; }
 
   .step.highlight .step-body {
     background: #131e35;
@@ -150,58 +115,77 @@
     color: #c8d0e0;
   }
 
-  .step.result .step-text {
-    color: #d0eedb;
-  }
+  .step.result .step-text { color: #d0eedb; }
 
-  .badge {
-    display: inline-block;
-    margin-top: 10px;
-    padding: 3px 10px;
-    border-radius: 20px;
-    font-size: 12px;
-    font-weight: 600;
-    background: #0e2b1a;
-    color: #4ecb7a;
-    border: 1px solid #1d6b3a;
-  }
-
-  .result-card {
+  /* Итоги */
+  .outcomes {
     max-width: 720px;
-    margin: 0 auto 80px;
-    padding: 0 24px;
-  }
-
-  .result-inner {
-    background: linear-gradient(135deg, #0e2b1a, #071510);
-    border: 1px solid #1d6b3a;
-    border-radius: 16px;
-    padding: 32px;
-    text-align: center;
-  }
-
-  .result-inner .big {
-    font-size: clamp(48px, 12vw, 80px);
-    font-weight: 800;
-    color: #4ecb7a;
-    line-height: 1;
-    margin-bottom: 8px;
-  }
-
-  .result-inner .big span {
-    font-size: 0.45em;
-    font-weight: 600;
-    color: #2e9955;
-    vertical-align: super;
-  }
-
-  .result-inner p {
-    font-size: 15px;
-    color: #7fbf9a;
-    line-height: 1.6;
-    max-width: 400px;
     margin: 0 auto;
+    padding: 0 24px 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
   }
+
+  .outcome {
+    background: #131e35;
+    border: 1px solid #2a4070;
+    border-radius: 14px;
+    padding: 24px 24px 20px;
+    animation: fadeIn 0.4s ease both;
+  }
+
+  .outcome:nth-child(1) { animation-delay: 0.55s; }
+  .outcome:nth-child(2) { animation-delay: 0.60s; }
+  .outcome:nth-child(3) { animation-delay: 0.65s; }
+
+  .outcome-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: #9abcf0;
+    margin-bottom: 16px;
+    line-height: 1.4;
+  }
+
+  .before-after {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .ba-block {
+    border-radius: 8px;
+    padding: 12px 14px;
+  }
+
+  .ba-block.before {
+    background: #1a1a2e;
+    border: 1px solid #2a2a4a;
+  }
+
+  .ba-block.after {
+    background: #0d1f14;
+    border: 1px solid #1d5030;
+  }
+
+  .ba-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+
+  .ba-block.before .ba-label { color: #5a5a8a; }
+  .ba-block.after  .ba-label { color: #2e9955; }
+
+  .ba-text {
+    font-size: 13px;
+    line-height: 1.55;
+  }
+
+  .ba-block.before .ba-text { color: #7a7aaa; }
+  .ba-block.after  .ba-text { color: #90d4aa; }
 
   footer {
     text-align: center;
@@ -210,21 +194,15 @@
     color: #3a4560;
   }
 
-  @media (max-width: 480px) {
+  @media (max-width: 520px) {
     .timeline::before { left: 22px; }
-    .step-num { width: 44px; height: 44px; font-size: 12px; }
     .step { gap: 16px; }
     .step-body { padding: 14px 16px; }
+    .before-after { grid-template-columns: 1fr; }
   }
 </style>
 </head>
 <body>
-
-<div class="hero">
-  <div class="hero-label">Кейс · AI-ассистент</div>
-  <h1>Как составить план исследования голосом — по дороге домой</h1>
-  <p class="hero-sub">Поток сознания → структурированный план → оптимизация стоимости → экономия в 7 раз</p>
-</div>
 
 <div class="timeline">
 
@@ -297,17 +275,55 @@
     <div class="step-body">
       <div class="step-icon">🏆</div>
       <div class="step-text">Один из вариантов дал экономию в <strong>7 раз</strong> при нормальном, устраивающем качестве реферирования источников.</div>
-      <div class="badge">~$0.23 против $1.71</div>
     </div>
   </div>
 
 </div>
 
-<div class="result-card">
-  <div class="result-inner">
-    <div class="big">7<span>×</span></div>
-    <p>Экономия токенов при нормальном качестве&nbsp;— найдена через сравнение трёх вариантов прямо в диалоге с ботом</p>
+<div class="outcomes">
+
+  <div class="outcome">
+    <div class="outcome-title">Сложную тему в компетентном диалоге проработать оказалось гораздо проще</div>
+    <div class="before-after">
+      <div class="ba-block before">
+        <div class="ba-label">Было</div>
+        <div class="ba-text">Идея без понимания — реально это или нет</div>
+      </div>
+      <div class="ba-block after">
+        <div class="ba-label">Стало</div>
+        <div class="ba-text">Понимание, что уже много кто пытался — с перечнем конкретных наработок, источников и отзывов тех, кто пользовался</div>
+      </div>
+    </div>
   </div>
+
+  <div class="outcome">
+    <div class="outcome-title">Можно в диалоге спланировать и переструктурировать сложное исследование — чтобы получить нужные результаты</div>
+    <div class="before-after">
+      <div class="ba-block before">
+        <div class="ba-label">Было</div>
+        <div class="ba-text">Самое общее представление, как к этому подступиться</div>
+      </div>
+      <div class="ba-block after">
+        <div class="ba-label">Стало</div>
+        <div class="ba-text">Развёрнутый план исследования</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="outcome">
+    <div class="outcome-title">Можно реализовать это на практике</div>
+    <div class="before-after">
+      <div class="ba-block before">
+        <div class="ba-label">Было</div>
+        <div class="ba-text">Идея о поисках или размышлениях</div>
+      </div>
+      <div class="ba-block after">
+        <div class="ba-label">Стало</div>
+        <div class="ba-text">План исследования с генеративной частью — на базе кристаллизации противоречий, с пищей для собственного размышления</div>
+      </div>
+    </div>
+  </div>
+
 </div>
 
 <footer>Виталий Жандаров · кейс по работе с AI-ассистентом</footer>
