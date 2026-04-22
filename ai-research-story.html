@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Как составить план исследования голосом</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: #0f1117;
+    color: #e8eaf0;
+    min-height: 100vh;
+  }
+
+  .hero {
+    background: linear-gradient(135deg, #1a1f2e 0%, #0f1117 100%);
+    padding: 60px 24px 48px;
+    text-align: center;
+    border-bottom: 1px solid #1e2336;
+  }
+
+  .hero-label {
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #5b7fa6;
+    margin-bottom: 16px;
+  }
+
+  .hero h1 {
+    font-size: clamp(24px, 5vw, 40px);
+    font-weight: 700;
+    line-height: 1.2;
+    color: #fff;
+    max-width: 640px;
+    margin: 0 auto 16px;
+  }
+
+  .hero-sub {
+    font-size: 15px;
+    color: #7a8899;
+    max-width: 480px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  .timeline {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 48px 24px 80px;
+    position: relative;
+  }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 44px;
+    top: 48px;
+    bottom: 80px;
+    width: 2px;
+    background: linear-gradient(to bottom, #2a3a5c, #1e2a40 80%, transparent);
+  }
+
+  .step {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 32px;
+    position: relative;
+    animation: fadeIn 0.4s ease both;
+  }
+
+  .step:nth-child(1)  { animation-delay: 0.05s; }
+  .step:nth-child(2)  { animation-delay: 0.10s; }
+  .step:nth-child(3)  { animation-delay: 0.15s; }
+  .step:nth-child(4)  { animation-delay: 0.20s; }
+  .step:nth-child(5)  { animation-delay: 0.25s; }
+  .step:nth-child(6)  { animation-delay: 0.30s; }
+  .step:nth-child(7)  { animation-delay: 0.35s; }
+  .step:nth-child(8)  { animation-delay: 0.40s; }
+  .step:nth-child(9)  { animation-delay: 0.45s; }
+  .step:nth-child(10) { animation-delay: 0.50s; }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(12px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .step-num {
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 700;
+    position: relative;
+    z-index: 1;
+    background: #1a2035;
+    border: 2px solid #2a3a5c;
+    color: #5b8fd4;
+  }
+
+  .step.highlight .step-num {
+    background: #1a3060;
+    border-color: #3a6bc4;
+    color: #7ab4ff;
+  }
+
+  .step.result .step-num {
+    background: #0e2b1a;
+    border-color: #1d6b3a;
+    color: #4ecb7a;
+  }
+
+  .step-body {
+    flex: 1;
+    background: #151b2d;
+    border: 1px solid #1e2844;
+    border-radius: 12px;
+    padding: 18px 20px;
+    transition: border-color 0.2s;
+  }
+
+  .step-body:hover {
+    border-color: #2a3a5c;
+  }
+
+  .step.highlight .step-body {
+    background: #131e35;
+    border-color: #2a4070;
+  }
+
+  .step.result .step-body {
+    background: #0d1f14;
+    border-color: #1a5030;
+  }
+
+  .step-icon {
+    font-size: 20px;
+    margin-bottom: 8px;
+  }
+
+  .step-text {
+    font-size: 15px;
+    line-height: 1.65;
+    color: #c8d0e0;
+  }
+
+  .step.result .step-text {
+    color: #d0eedb;
+  }
+
+  .badge {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    background: #0e2b1a;
+    color: #4ecb7a;
+    border: 1px solid #1d6b3a;
+  }
+
+  .result-card {
+    max-width: 720px;
+    margin: 0 auto 80px;
+    padding: 0 24px;
+  }
+
+  .result-inner {
+    background: linear-gradient(135deg, #0e2b1a, #071510);
+    border: 1px solid #1d6b3a;
+    border-radius: 16px;
+    padding: 32px;
+    text-align: center;
+  }
+
+  .result-inner .big {
+    font-size: clamp(48px, 12vw, 80px);
+    font-weight: 800;
+    color: #4ecb7a;
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+
+  .result-inner .big span {
+    font-size: 0.45em;
+    font-weight: 600;
+    color: #2e9955;
+    vertical-align: super;
+  }
+
+  .result-inner p {
+    font-size: 15px;
+    color: #7fbf9a;
+    line-height: 1.6;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  footer {
+    text-align: center;
+    padding: 0 24px 48px;
+    font-size: 13px;
+    color: #3a4560;
+  }
+
+  @media (max-width: 480px) {
+    .timeline::before { left: 22px; }
+    .step-num { width: 44px; height: 44px; font-size: 12px; }
+    .step { gap: 16px; }
+    .step-body { padding: 14px 16px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-label">Кейс · AI-ассистент</div>
+  <h1>Как составить план исследования голосом — по дороге домой</h1>
+  <p class="hero-sub">Поток сознания → структурированный план → оптимизация стоимости → экономия в 7 раз</p>
+</div>
+
+<div class="timeline">
+
+  <div class="step">
+    <div class="step-num">1</div>
+    <div class="step-body">
+      <div class="step-icon">🚶</div>
+      <div class="step-text">Иду пешком с электрички домой по посёлку — 20 минут.</div>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-num">2</div>
+    <div class="step-body">
+      <div class="step-icon">💡</div>
+      <div class="step-text">Вечером по дороге вспомнил интересную тему — подумал: почему не попробовать исследовать её с помощью AI-помощника?</div>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-num">3</div>
+    <div class="step-body">
+      <div class="step-icon">🎙️</div>
+      <div class="step-text">Просто наговорил поток сознания — что интересно, без структуры. Бот тут же расшифровывал голос в текст и показывал, чтобы убедиться: ничего не потерялось.</div>
+    </div>
+  </div>
+
+  <div class="step highlight">
+    <div class="step-num">4</div>
+    <div class="step-body">
+      <div class="step-icon">✨</div>
+      <div class="step-text">Бот хорошо структурировал всё своими словами — к удивлению автора.</div>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-num">5</div>
+    <div class="step-body">
+      <div class="step-icon">💬</div>
+      <div class="step-text">Дальше — диалог: бот давал версии, задавал вопросы, уточнял. Вместе составили план исследования.</div>
+    </div>
+  </div>
+
+  <div class="step highlight">
+    <div class="step-num">6</div>
+    <div class="step-body">
+      <div class="step-icon">🔍</div>
+      <div class="step-text">Бегло посмотрел план — увидел: он реферативный, а хотелось найти что-то новое. Добавили генеративную часть.</div>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-num">7</div>
+    <div class="step-body">
+      <div class="step-icon">⚖️</div>
+      <div class="step-text">План оказался очень развёрнутым — возник вопрос: как не потратить много токенов на его реализацию?</div>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-num">8</div>
+    <div class="step-body">
+      <div class="step-icon">🔀</div>
+      <div class="step-text">Бот предложил три варианта реализации. Проверили все три на одном и том же небольшом куске источников — оценили стоимость и качество каждого.</div>
+    </div>
+  </div>
+
+  <div class="step result">
+    <div class="step-num">9</div>
+    <div class="step-body">
+      <div class="step-icon">🏆</div>
+      <div class="step-text">Один из вариантов дал экономию в <strong>7 раз</strong> при нормальном, устраивающем качестве реферирования источников.</div>
+      <div class="badge">~$0.23 против $1.71</div>
+    </div>
+  </div>
+
+</div>
+
+<div class="result-card">
+  <div class="result-inner">
+    <div class="big">7<span>×</span></div>
+    <p>Экономия токенов при нормальном качестве&nbsp;— найдена через сравнение трёх вариантов прямо в диалоге с ботом</p>
+  </div>
+</div>
+
+<footer>Виталий Жандаров · кейс по работе с AI-ассистентом</footer>
+
+</body>
+</html>
