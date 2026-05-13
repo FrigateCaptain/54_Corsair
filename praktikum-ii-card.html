@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Практикум ИИ</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+    background: #e8e8e8;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 32px 16px;
+  }
+
+  .card {
+    background: #f8f8e8;
+    border-radius: 18px;
+    border: 1px solid #deded0;
+    padding: 32px 28px 36px;
+    max-width: 400px;
+    width: 100%;
+  }
+
+  .event-header {
+    text-align: center;
+    margin-bottom: 22px;
+  }
+
+  .event-time {
+    font-size: 15px;
+    color: #444;
+    margin-bottom: 4px;
+  }
+
+  .event-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #222;
+  }
+
+  .section-title {
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    color: #222;
+    margin-bottom: 12px;
+  }
+
+  .dash-list {
+    list-style: none;
+    padding: 0;
+  }
+
+  .dash-list li {
+    font-size: 15px;
+    color: #333;
+    line-height: 1.55;
+    padding-left: 16px;
+    position: relative;
+    margin-bottom: 8px;
+  }
+
+  .dash-list li::before {
+    content: '–';
+    position: absolute;
+    left: 0;
+    color: #555;
+  }
+</style>
+</head>
+<body>
+  <div class="card">
+
+    <div class="event-header">
+      <div class="event-time">Завтра в 10:30</div>
+      <div class="event-title">Практикум ИИ</div>
+    </div>
+
+    <div class="section-title">Темы</div>
+    <ul class="dash-list">
+      <li>Ответы на вопросы</li>
+      <li>Ревизия текущих наработок: как сделать ещё проще, дешевле и продуктивнее</li>
+      <li>Перепросмотр своих управленческих задач: какие ещё можно переложить на ИИ</li>
+      <li>Очередная тренировка управленческой оптики в работе с ИИ</li>
+    </ul>
+
+  </div>
+</body>
+</html>
